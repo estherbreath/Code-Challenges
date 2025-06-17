@@ -82,7 +82,7 @@
 
       // Function Challenges 1
 
-      const calvAverage = (a, b, c) => (a + b + c) / 3;
+      /* const calvAverage = (a, b, c) => (a + b + c) / 3;
       console.log(calvAverage(5, 6, 7));
 
       // test 1
@@ -126,6 +126,7 @@
       console.log(bills);
       console.log(tips);
       console.log(total);
+      */
 
       // object Challenge
       const BMIMark = {
@@ -162,6 +163,36 @@
           }'s (${BMIMark.calcBMI()})`
         );
       }
+
+      // last fundamental challenge
+
+      const calcTip = function (bill) {
+        const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+        return tip;
+      };
+
+      const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+      const tips = [];
+      const totals = [];
+
+      for (i = 0; i < bills.length; i++) {
+        const tip = calcTip(bills[i]);
+        tips.push(tip);
+        totals.push(tip + bills[i]);
+      }
+      console.log(bills, tips, totals);
+
+      const calcaverage = function (arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          // sum = sum + arr[i];
+          sum += arr[i];
+        }
+        return sum / arr.length;
+      };
+      console.log(calcaverage([2, 3, 7]));
+      console.log(calcaverage(totals));
+      console.log(calcaverage(tips));
     </script>
   </body>
 </html>
